@@ -28,9 +28,9 @@ sparkbars <- function(x, midpoint = 0, colors = FALSE) {
 
   spark <- lookup_bars[as.character(normalised)]
 
-  # spark[negative] <- paste0("\033[7m", spark[negative], "\033[27m")  # inverse
+  spark[negative] <- paste0("\033[7m", spark[negative], "\033[27m")  # inverse
 
-  spark[negative] <- crayon::inverse(spark[negative])
+  # spark[negative] <- crayon::inverse(spark[negative])
 
   if (isTRUE(colors)) {
     spark[positive] <- paste0("\033[31m", spark[positive], "\033[39m")  # red

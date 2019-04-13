@@ -7,12 +7,12 @@
     "folds" : "",
     "hash" : "0",
     "id" : "1CA706F5",
-    "lastKnownWriteTime" : 1555199404,
-    "last_content_update" : 1555199404578,
+    "lastKnownWriteTime" : 1555199562,
+    "last_content_update" : 1555199562653,
     "path" : "~/Documents/sparkbars/R/spark_bars.R",
     "project_path" : "R/spark_bars.R",
     "properties" : {
-        "cursorPosition" : "32,33",
+        "cursorPosition" : "30,37",
         "scrollLine" : "20"
     },
     "relative_order" : 2,
