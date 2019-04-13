@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1555198800083.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5F7D9326",
+    "lastKnownWriteTime" : 1555199388,
+    "last_content_update" : 1555199388679,
+    "path" : "~/Documents/sparkbars/README.Rmd",
+    "project_path" : "README.Rmd",
+    "properties" : {
+        "cursorPosition" : "40,0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "11"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

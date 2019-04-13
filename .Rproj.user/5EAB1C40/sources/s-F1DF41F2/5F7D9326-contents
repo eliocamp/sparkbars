@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  tidy = FALSE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# sparkbars
+
+A purposedly simple implementation of sparkbars that can plot negative and 
+positive values.  
+
+## Installation
+
+sparkbars is not con CRAN yet, but you can install the developement version
+from GitHub with:
+
+```r
+remotes::install_github("eliocamp/sparkbars")
+```
+
+## Example
+
+```{r example}
+library(sparkbars)
+x <- rnorm(10)
+sparkbars(x)
+```
+
+Inline: 
+`r sparkbars(x)`
+
+. Looks bad
