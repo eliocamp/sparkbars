@@ -2,4 +2,3 @@
 
 S3method(print,sparkbar_sparkbar)
 export(sparkbars)
-importFrom(methods,setOldClass)

@@ -36,7 +36,10 @@ x <- rnorm(10)
 sparkbars(x, color = TRUE)
 ```
 
+Doesn't work with knitr. 
+
 Inline: 
 
 `r sparkbars(x)`
 
+Looks horrible 

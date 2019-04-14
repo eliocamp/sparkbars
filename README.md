@@ -26,6 +26,10 @@ sparkbars(x, color = TRUE)
 #> ▆ ▅  ▅   ▇
 ```
 
+Doesn't work with knitr.
+
 Inline:
 
 \[7m▆\[27m, ▂, \[7m▅\[27m, ▇, ▂, \[7m▅\[27m, ▃, ▄, ▃, \[7m▇\[27m
+
+Looks horrible

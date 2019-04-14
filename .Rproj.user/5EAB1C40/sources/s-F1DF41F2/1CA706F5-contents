@@ -48,7 +48,8 @@ sparkbars <- function(x, midpoint = 0, colors = FALSE) {
 
 
 #' @export
-print.sparkbar_sparkbar <- function(spark) {
+print.sparkbar_sparkbar <- function(x, ...) {
+  spark <- x
   x <- attr(spark, "x")
   width <- options()$width
   N <- length(spark)
@@ -84,10 +85,6 @@ print_spark_oneline <- function(spark, x) {
     }
   }
 }
-
-#' @importFrom methods setOldClass
-
-setOldClass(c("sparkbar_sparkbar"))
 
 lookup_bars <- c("0" = "\033[4m \033[24m",
                  "1" = "\U2582",
