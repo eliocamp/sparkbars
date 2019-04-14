@@ -28,22 +28,28 @@ sparkbars <- function(x, midpoint = 0, colors = FALSE) {
 
   spark <- lookup_bars[as.character(normalised)]
 
-  spark[negative] <- paste0("\033[7m", spark[negative], "\033[27m")  # inverse
+  # spark[negative] <- paste0("\033[7m", spark[negative], "\033[27m")  # inverse
 
-  # spark[negative] <- crayon::inverse(spark[negative])
+  spark[negative] <- crayon::inverse(spark[negative])
 
   if (isTRUE(colors)) {
-    spark[positive] <- paste0("\033[31m", spark[positive], "\033[39m")  # red
-    spark[negative] <- paste0("\033[34m", spark[negative], "\033[39m")  # blue
+    # spark[positive] <- paste0("\033[31m", spark[positive], "\033[39m")  # red
+    spark[positive] <- crayon::red(spark[positive])
+    # spark[negative] <- paste0("\033[34m", spark[negative], "\033[39m")  # blue
+    spark[negative] <- crayon::blue(spark[negative])
   }
 
-
-  print_spark(spark, x_centered)
-  return(invisible(x))
+  attr(spark, "x") <- x_centered
+  attr(spark, "class") <- c("sparkbar_sparkbar")
+  # print(spark)
+  return(spark)
+  # return(invisible(x))
 }
 
 
-print_spark <- function(spark, x) {
+#' @export
+print.sparkbar_sparkbar <- function(spark) {
+  x <- attr(spark, "x")
   width <- options()$width
   N <- length(spark)
   start <- seq(1, N, by = width)
@@ -55,6 +61,7 @@ print_spark <- function(spark, x) {
     print_spark_oneline(this_spark, this_x)
     if (length(start) > 1 & s < length(start)) cat("\n")
   }
+  # invisible(spark)
 }
 
 print_spark_oneline <- function(spark, x) {
@@ -78,6 +85,9 @@ print_spark_oneline <- function(spark, x) {
   }
 }
 
+#' @importFrom methods setOldClass
+
+setOldClass(c("sparkbar_sparkbar"))
 
 lookup_bars <- c("0" = "\033[4m \033[24m",
                  "1" = "\U2582",

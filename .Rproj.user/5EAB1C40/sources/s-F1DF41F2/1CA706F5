@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2348336452",
     "id" : "1CA706F5",
-    "lastKnownWriteTime" : 1555199562,
-    "last_content_update" : 1555199562653,
+    "lastKnownWriteTime" : 1555200755,
+    "last_content_update" : 1555200755654,
     "path" : "~/Documents/sparkbars/R/spark_bars.R",
     "project_path" : "R/spark_bars.R",
     "properties" : {
-        "cursorPosition" : "30,37",
-        "scrollLine" : "20"
+        "cursorPosition" : "49,10",
+        "scrollLine" : "42"
     },
     "relative_order" : 2,
     "source_on_save" : false,
