@@ -3,6 +3,7 @@
 #' @param x a vector with the data to plot.
 #' @param midpoint midpoint that marks the "zero" line.
 #' @param colors whether to use colors or not.
+#' @param range whether to print the range.
 #'
 #'
 #' @examples
@@ -11,7 +12,7 @@
 #' sparkbars(x, midpoint = 1, colors = TRUE)
 #'
 #' @export
-sparkbars <- function(x, midpoint = 0, colors = FALSE) {
+sparkbars <- function(x, midpoint = 0, colors = FALSE, range = TRUE) {
   normalised <- rep(0, length(x))
   M <- max(x, na.rm = TRUE)
   m <- min(x, na.rm = TRUE)
@@ -39,6 +40,17 @@ sparkbars <- function(x, midpoint = 0, colors = FALSE) {
     spark[negative] <- crayon::blue(spark[negative])
   }
 
+  if (isTRUE(range)) {
+    M <- as.character(signif(max(x), 2))
+    m <- as.character(signif(min(x), 2))
+    m_char <- max(nchar(M), nchar(m))
+
+    M <- formatC(M, width = m_char, flag = " ")
+    m <- formatC(m, width = m_char, flag = " ")
+
+    attr(spark, "range") <- c(m, M)
+  }
+  # attr(spark)
   attr(spark, "x") <- x_centered
   attr(spark, "class") <- c("sparkbar_sparkbar")
   # print(spark)
@@ -58,6 +70,7 @@ print.sparkbar_sparkbar <- function(x, ...) {
   for (s in seq_along(start)) {
     chunk <- seq(start[s], end[s])
     this_spark <- spark[chunk]
+    mostattributes(this_spark) <- attributes(spark)
     this_x <- x[chunk]
     print_spark_oneline(this_spark, this_x)
     if (length(start) > 1 & s < length(start)) cat("\n")
@@ -67,6 +80,11 @@ print.sparkbar_sparkbar <- function(x, ...) {
 
 print_spark_oneline <- function(spark, x) {
   # Print positives
+  r <- attr(spark, "range")
+  if (!is.null(r)) {
+    cat(r[2], "\U250C ")
+  }
+
   for (i in seq_along(spark)) {
     if (x[i] >= 0 | is.na(x[i])) {
       cat(spark[i])
@@ -77,6 +95,9 @@ print_spark_oneline <- function(spark, x) {
   cat("\n")
 
   # Print negatives
+  if (!is.null(r)) {
+    cat(r[1], "\U2514 ")
+  }
   for (i in seq_along(spark)) {
     if (x[i] < 0  | is.na(x[i])) {
       cat(spark[i])

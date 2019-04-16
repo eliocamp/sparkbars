@@ -4,7 +4,7 @@
 \alias{sparkbars}
 \title{Prints sparkbars from the data}
 \usage{
-sparkbars(x, midpoint = 0, colors = FALSE)
+sparkbars(x, midpoint = 0, colors = FALSE, range = TRUE)
 }
 \arguments{
 \item{x}{a vector with the data to plot.}
@@ -12,6 +12,8 @@ sparkbars(x, midpoint = 0, colors = FALSE)
 \item{midpoint}{midpoint that marks the "zero" line.}
 
 \item{colors}{whether to use colors or not.}
+
+\item{range}{whether to print the range.}
 }
 \description{
 Prints sparkbars from the data
