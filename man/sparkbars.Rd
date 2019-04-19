@@ -23,4 +23,8 @@ x <- rnorm(10)
 sparkbars(x, colors = TRUE)
 sparkbars(x, midpoint = 1, colors = TRUE)
 
+# NAs are indicated.
+x[c(3, 6)] <- NA
+sparkbars(x)
+
 }

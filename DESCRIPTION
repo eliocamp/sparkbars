@@ -17,3 +17,5 @@ URL: https://github.com/eliocamp/sparkbars
 BugReports: https://github.com/eliocamp/sparkbars/issues
 LazyData: true
 RoxygenNote: 6.1.1
+Imports: 
+    crayon

@@ -11,6 +11,10 @@
 #' sparkbars(x, colors = TRUE)
 #' sparkbars(x, midpoint = 1, colors = TRUE)
 #'
+#' # NAs are indicated.
+#' x[c(3, 6)] <- NA
+#' sparkbars(x)
+#'
 #' @export
 sparkbars <- function(x, midpoint = 0, colors = FALSE, range = TRUE) {
   normalised <- rep(0, length(x))
@@ -41,8 +45,8 @@ sparkbars <- function(x, midpoint = 0, colors = FALSE, range = TRUE) {
   }
 
   if (isTRUE(range)) {
-    M <- as.character(signif(max(x), 2))
-    m <- as.character(signif(min(x), 2))
+    M <- as.character(signif(M, 2))
+    m <- as.character(signif(m, 2))
     m_char <- max(nchar(M), nchar(m))
 
     M <- formatC(M, width = m_char, flag = " ")
