@@ -1,32 +1,32 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-sparkbars
-=========
 
-A purposedly simple implementation of sparkbars that can plot negative and positive values.
+# sparkbars
 
-Installation
-------------
+A purposedly simple implementation of sparkbars that can plot negative
+and positive values.
 
-sparkbars is not con CRAN yet, but you can install the developement version from GitHub with:
+## Installation
+
+sparkbars is not con CRAN yet, but you can install the developement
+version from GitHub with:
 
 ``` r
 remotes::install_github("eliocamp/sparkbars")
 ```
 
-Example
--------
+## Example
 
 ``` r
 library(sparkbars)
 set.seed(1)
 x <- rnorm(10)
 sparkbars(x, color = TRUE)
-#>  ▂ ▇▂ ▃▄▃ 
-#> ▆ ▅  ▅   ▇
+#>   1.6 ┌  ▂ ▇▂ ▃▄▃ 
+#> -0.84 └ ▆ ▅  ▅   ▇
 ```
 
-Doesn't work with knitr.
+Doesn’t work with knitr.
 
 Inline:
 
